@@ -1,4 +1,4 @@
-#### Data processing echniques:
+#### Data processing techniques:
 
 * Replace contractions to their equivalents;
 * Remove punctuation and numbers;
