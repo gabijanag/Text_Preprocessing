@@ -66,11 +66,6 @@ Punctuation doesn’t necessarily add any extra information while treating text 
 Normalization generally refers to a series of related tasks meant to put all text on a level playing field: converting all text to the same case (upper or lower), removing punctuation, converting numbers to their word equivalents, and so on.
 Normalization puts all words on equal footing, and allows processing to proceed uniformly.
 
-Text normalization includes:
-- converting all letters to lower or upper case
-- converting numbers into words or removing them
-- removing stop words, sparse terms, and particular words
-
 
 ### Normalizing case
 
