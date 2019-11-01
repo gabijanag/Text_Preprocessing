@@ -2,7 +2,7 @@
 
 There is a whole suite of text preparation methods that you may need to use, and the choice of methods really depends on your task. 
 
-Text preprocessing is not directly transferable from task to task. Let’s take a very simple example, let’s say you are trying to discover commonly used words in a dataset. If your pre-processing step involves removing stop words because some other task used it, then you are probably going to miss out on some of the common words as you have already eliminated it. So really, it’s not a one-size-fits-all approach. 
+Let’s take a very simple example, let’s say you are trying to discover commonly used words in a dataset. If your pre-processing step involves removing stop words because some other task used it, then you are probably going to miss out on some of the common words as you have already eliminated it. So really, it’s not a one-size-fits-all approach. 
 
 
 # Data processing techniques
