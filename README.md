@@ -7,7 +7,7 @@ Text preprocessing is not directly transferable from task to task. Let’s take 
 
 ## Data processing techniques
 
-###### Noise Removal:  
+**Noise Removal**:  
 
 Sample noise removal tasks could include:
 removing text file headers, footers
@@ -15,15 +15,15 @@ removing HTML, XML, etc. markup and metadata
 extracting valuable data from other formats, such as JSON
 
 ```remove_html()```  
-Strips away HTML markup.
+*Strips away HTML markup.*
 
 ```remove_between_square_brackets```  
-Removes open and close double brackets and anything in between them.
+*Removes open and close double brackets and anything in between them.*
 
-###### Deduplication:  
+**Deduplication:**  
 
 ```remove_dupes()```  
-Removes duplicate rows.
+*Removes duplicate rows.*
 
 
 ###### Normalization:  
