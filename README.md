@@ -7,57 +7,60 @@ One task’s ideal preprocessing, can become another task’s worst nightmare. S
 
 #### Data processing techniques
 
-* Noise Removal:
+* Noise Removal:  
 
 Sample noise removal tasks could include:
 removing text file headers, footers
 removing HTML, XML, etc. markup and metadata
 extracting valuable data from other formats, such as JSON
 
-```remove_html()```
+```remove_html()```  
 Strips away HTML markup.
 
-```remove_between_square_brackets```
+```remove_between_square_brackets```  
 Removes open and close double brackets and anything in between them.
 
-* Deduplication:
+* Deduplication:  
 
-```remove_dupes()```
+```remove_dupes()```  
 Removes duplicate rows.
 
 
-* Normalization:
+* Normalization:  
 Normalization puts all words on equal footing, and allows processing to proceed uniformly.
 
-```to_lowercase()```
+```to_lowercase()```  
 Converts all characters to lowercase from list of tokenized words.
 
-```remove_punctuation()```
+```remove_punctuation()```  
 Removes punctuation from list of tokenized words.
 
-```replace_numbers()```
+```replace_numbers()```  
 Replaces all interger occurrences in list of tokenized words with textual representation.
 
-```remove_stopwords()```
+```remove_stopwords()```  
 Removes stop words from list of tokenized words.
 
-```stem_words()```
+```stem_words()```  
 Stems words in list of tokenized words.
 
 
-* Contraction replacement:
+* Contraction replacement:  
+
+```expand_contracions()```  
 Replaces contractions to their equivalents
-```expand_contracions()```
 
-* Slang replacement:
+* Slang replacement:  
+```count_slang()```  
 Looks for any slang, if found displays a list of found slangs and total number of slangs in the text. 
-```count_slang()```
-Replaces slang words and abbreviations with their equivalents
-```replace_slang()```
 
-* Negation replacement:
+```replace_slang()```  
+Replaces slang words and abbreviations with their equivalents
+
+* Negation replacement:  
+
+```replace_negations()```  
 Replaces not and the following word with the antonym.
-```replace_negations()```
 
 * Remove stopwords;
 * Stemmimg. Reduce inflectional forms to a common base form;
