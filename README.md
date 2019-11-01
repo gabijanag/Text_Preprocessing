@@ -56,11 +56,16 @@ Counts how many negations are found and displays a list of them.
 Replaces not and the following word with the antonym.
 
 
+## Tokenization
+
+Tokenization refers to dividing the text into a sequence of words or sentences.  Further processing is generally performed after a piece of text has been appropriately tokenized. Tokenization is also referred to as text segmentation or lexical analysis. Sometimes segmentation is used to refer to the breakdown of a large chunk of text into pieces larger than words (e.g. paragraphs or sentences), while tokenization is reserved for the breakdown process which results in words.
+This can be done using NTLK's ```word_tokenize()``` function. After tokenization, we are no longer working at a text level, but now at a word level.
+
+
 ## Normalization:  
 
+Normalization generally refers to a series of related tasks meant to put all text on a level playing field: converting all text to the same case (upper or lower), removing punctuation, converting numbers to their word equivalents, and so on.
 Normalization puts all words on equal footing, and allows processing to proceed uniformly.
-
-Tokenization refers to dividing the text into a sequence of words or sentences. 
 
 
 ### Normalizing case
@@ -75,33 +80,35 @@ Converts all characters to lowercase from list of tokenized words.
 
 Punctuation doesn’t necessarily add any extra information while treating text data. Therefore removing all instances of puctuation helps reduce the size of the training data.  
 
-```remove_punctuation(tokens)```  
-Removes punctuation from list of tokenized words.
-
-
+```remove_punctuation(tokens)```  removes punctuation from a list of tokenized words.
 
 ```replace_numbers(tokens)```  
 Replaces all interger occurrences in list of tokenized words with textual representation.
+
+```remove_non_ascii(words)```
+Removes non-ASCII characters from list of tokenized words
 
 ```remove_stopwords(tokens)```  
 Removes stop words from a list of tokenized words.
 
 
-### Stemming
+### Stemming and lemmatization
 
-Stemming refers to the process of reducing each word to its root or base, or simply put, the removal of suffices, like “ing”, “ly”, “s”, etc. For example “fishing,” “fished,” “fisher” all reduce to the stem “fish.”
+For grammatical reasons, documents are going to use different forms of a word, such as organize, organizes, and organizing. Additionally, there are families of derivationally related words with similar meanings, such as democracy, democratic, and democratization. 
+
+The goal of both stemming and lemmatization is to reduce inflectional forms and sometimes derivationally related forms of a word to a common base form.
+
+**Stemming** usually refers to a process that chops off the ends of words in the hope of achieving this goal correctly most of the time, and often includes the removal of derivational affixes or suffices, like “ing”, “ly”, “s”, etc. For example “fishing,” “fished,” “fisher” all reduce to the stem “fish.”
 
 Some applications, like document classification, may benefit from stemming in order to both reduce the vocabulary and to focus on the sense or sentiment of a document rather than deeper meaning.
 
 ```stem_words()```  stems words in list of tokenized words.
 
+**Lemmatization** usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma. In other words lemmatization converts the word into its root word, rather than just stripping the suffices. 
 
-### Lemmatization
-
-Lemmatization converts the word into its root word, rather than just stripping the suffices. It makes use of the vocabulary and does a morphological analysis to obtain the root word. 
+If confronted with the token saw, stemming might return just s, whereas lemmatization would attempt to return either see or saw depending on whether the use of the token was as a verb or a noun.
 
 ```lemmatize_words()``` lemmatizes verbs in list of tokenized words.
 
-```stem_and_lemmatize()```  
-Creates and prints a list of stemmed and lemmatized verbs.
+```stem_and_lemmatize()``` creates and prints a list of stemmed and lemmatized verbs.
 
