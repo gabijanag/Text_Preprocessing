@@ -7,7 +7,7 @@ Text preprocessing is not directly transferable from task to task. Let’s take 
 
 ## Data processing techniques
 
-**Noise Removal**:  
+### Noise Removal:  
 
 Sample noise removal tasks could include:
 removing text file headers, footers
@@ -20,13 +20,13 @@ extracting valuable data from other formats, such as JSON
 ```remove_between_square_brackets```  
 *Removes open and close double brackets and anything in between them.*
 
-**Deduplication:**  
+### Deduplication:   
 
 ```remove_dupes()```  
 *Removes duplicate rows.*
 
 
-**Normalization:**  
+### Normalization:  
 Normalization puts all words on equal footing, and allows processing to proceed uniformly.
 
 ```to_lowercase()```  
@@ -51,7 +51,7 @@ Lemmatizes verbs in list of tokenized words.
 Creates and prints a list of stemmed and lemmatized verbs.
 
 
-**Contraction replacement:**  
+### Contraction replacement:  
 
 ```count_contractions()```  
 Counts how many contractions are there and displays a list of them.
@@ -59,7 +59,7 @@ Counts how many contractions are there and displays a list of them.
 ```expand_contracions()```  
 Replaces contractions to their equivalents.
 
-**Slang replacement:**  
+### Slang replacement:  
 
 ```count_slang()```  
 Looks for any slang, if found displays a list of found slangs and total number of slangs in the text. 
@@ -67,7 +67,7 @@ Looks for any slang, if found displays a list of found slangs and total number o
 ```replace_slang()```  
 Replaces slang words and abbreviations with their equivalents.
 
-**Negation replacement:**  
+### Negation replacement:  
 
 ```count_negations()```  
 Counts how many negations are found and displays a list of them. 
