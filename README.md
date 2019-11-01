@@ -135,7 +135,10 @@ If confronted with the token saw, stemming might return just s, whereas lemmatiz
 verbs.
 
 
-References:
-[Matthew Mayo](https://www.kdnuggets.com/2017/12/general-approach-preprocessing-text-data.html)
-
-
+References:  
+[Cambridge University Press, Stemming and lemmatization](https://nlp.stanford.edu/IR-book/html/htmledition/stemming-and-lemmatization-1.html);  
+[Jiahao Weng, NLP Text Preprocessing] (https://towardsdatascience.com/nlp-text-preprocessing-a-practical-guide-and-template-d80874676e79);  
+[Jason Brownlee, How to Clean Text for Machine Learning with Python](https://machinelearningmastery.com/clean-text-machine-learning-python/);  
+[Kavita Ganesan, All you need to know about Text Preprocessing for Machine Learning & NLP](https://kavita-ganesan.com/text-preprocessing-tutorial/#.Xbw36ej7Q2x);  
+[Matthew Mayo, Text Data Preprocessing: A Walkthrough in Python](https://www.kdnuggets.com/2018/03/text-data-preprocessing-walkthrough-python.html);  
+[Matthew Mayo, A general Approach to Preprocessing Text Data](https://www.kdnuggets.com/2017/12/general-approach-preprocessing-text-data.html);  
