@@ -150,18 +150,18 @@ verbs.
 Not really, but you do have to do some of it for sure if you want good, consistent results. To give you an idea of what the bare minimum should be, [Kavita Ganesan](https://kavita-ganesan.com/text-preprocessing-tutorial/#.XbxFguj7Q2w) broken it down to Must Do, Should Do and Task Dependent. Everything that falls under task dependent can be quantitatively or qualitatively tested before deciding you actually need it. Remember, less is more and you want to keep your approach as elegant as possible. The more overhead you add, the more layers you will have to peel back when you run into issues.
 
 **Must Do:**
-Noise removal
-
-Lowercasing (can be task dependent in some cases)
+- Noise removal
+- Lowercasing (can be task dependent in some cases)
 
 **Should Do:**
-Simple normalization – (e.g. standardize near identical words)
+- Simple normalization – (e.g. standardize near identical words)
 
 **Task Dependent:**
-Advanced normalization (e.g. addressing out-of-vocabulary words)
-Stop-word removal
-Stemming / lemmatization
-Text enrichment / augmentation
+- Advanced normalization (e.g. addressing out-of-vocabulary words)
+- Stop-word removal
+- Stemming / lemmatization
+- Text enrichment / augmentation
+
 So, for any task, the minimum you should do is try to lowercase your text and remove noise. What entails noise depends on your domain (see section on Noise Removal). You can also do some basic normalization steps for more consistency and then systematically add other layers as you see fit.
 
 General Rule of Thumb
