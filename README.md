@@ -7,17 +7,29 @@ Text preprocessing is not directly transferable from task to task. Let’s take 
 
 # Data processing techniques
 
+So how do we go about doing text preprocessing? Generally, there are 3 main components:
+- Noise removal
+- Tokenization
+- Normalization
+
+In a nutshell, **noise removal** cleans up the text, e.g., removes extra whitespaces. **Tokenization** is about splitting strings of text into smaller pieces, or “tokens”. Paragraphs can be tokenized into sentences and sentences can be tokenized into words. **Normalization** aims to put all text on a level playing field, e.g., converting all characters to lowercase. 
+
+
 ## Noise Removal 
 
-Let's loosely define **noise removal** as text-specific normalization tasks which often take place prior to tokenization. While the other 2 major steps of the preprocessing framework (tokenization and normalization) are less task-independent, noise removal is much more task-specific.
+**Noise removal** can be loosely defined as text-specific normalization tasks which often take place prior to tokenization. While the other 2 major steps of the preprocessing framework (tokenization and normalization) are less task-independent, noise removal is much more task-specific.
 
 Sample noise removal tasks could include:
 removing text file headers, footers
 removing HTML, XML, etc. markup and metadata
 extracting valuable data from other formats, such as JSON
 
-```remove_html()```  
-Strips away HTML markup.
+
+### Remove HTML
+
+If the data is web scraped, chances are it will contain some HTML tags. Since these tags are not useful for NLP tasks, it is better to remove them. 
+
+```remove_html()``` strips away HTML markup.
 
 ```remove_between_square_brackets```  
 Removes open and close double brackets and anything in between them.
@@ -34,31 +46,26 @@ While not mandatory to do at this stage prior to tokenization (you'll find that 
 
 ### Deduplication:   
 
-```remove_dupes()```  
-Removes duplicate rows.
+```remove_dupes()``` removes duplicate rows.
 
 
 ### Slang replacement:  
 
-```count_slang()```  
-Looks for any slang, if found displays a list of found slangs and total number of slangs in the text. 
+```count_slang()``` looks for any slang, if found displays a list of found slangs and total number of slangs in the text. 
 
-```replace_slang()```  
-Replaces slang words and abbreviations with their equivalents.
+```replace_slang()``` replaces slang words and abbreviations with their equivalents.
 
 
 ### Negation replacement:  
 
-```count_negations()```  
-Counts how many negations are found and displays a list of them. 
+```count_negations()```  counts how many negations are found and displays a list of them. 
 
-```replace_negations()```  
-Replaces not and the following word with the antonym.
+```replace_negations()```  replaces not and the following word with the antonym.
 
 
 ## Tokenization
 
-Tokenization refers to dividing the text into a sequence of words or sentences.  Further processing is generally performed after a piece of text has been appropriately tokenized. Tokenization is also referred to as text segmentation or lexical analysis. Sometimes segmentation is used to refer to the breakdown of a large chunk of text into pieces larger than words (e.g. paragraphs or sentences), while tokenization is reserved for the breakdown process which results in words.
+Tokenization refers to dividing text into a sequence of words or sentences.  Further processing is generally performed after a piece of text has been appropriately tokenized. Tokenization is also referred to as text segmentation or lexical analysis. Sometimes segmentation is used to refer to the breakdown of a large chunk of text into pieces larger than words (e.g. paragraphs or sentences), while tokenization is reserved for the breakdown process which results in words.
 This can be done using NTLK's ```word_tokenize()``` function. After tokenization, we are no longer working at a text level, but now at a word level.
 
 
@@ -67,29 +74,43 @@ This can be done using NTLK's ```word_tokenize()``` function. After tokenization
 Normalization generally refers to a series of related tasks meant to put all text on a level playing field: converting all text to the same case (upper or lower), removing punctuation, converting numbers to their word equivalents, and so on.
 Normalization puts all words on equal footing, and allows processing to proceed uniformly.
 
+Text normalization includes:
+- converting all letters to lower or upper case
+- converting numbers into words or removing numbers
+- removing punctuations, accent marks and other diacritics
+- removing white spaces
+- removing stop words, sparse terms, and particular words
+
 
 ### Normalizing case
+
 It is common to convert all words to one case.
 This means that the vocabulary will shrink in size, but some distinctions are lost (e.g. “Apple” the company vs “apple” the fruit is a commonly used example).
 
-```to_lowercase(tokens)```  
-Converts all characters to lowercase from list of tokenized words.
+```to_lowercase(tokens)```  converts all characters to lowercase from list of tokenized words.
 
 
 ### Removing puctuation
 
 Punctuation doesn’t necessarily add any extra information while treating text data. Therefore removing all instances of puctuation helps reduce the size of the training data.  
 
-```remove_punctuation(tokens)```  removes punctuation from a list of tokenized words.
+```remove_punctuation(tokens)``` removes punctuation from a list of tokenized words.
 
-```replace_numbers(tokens)```  
-Replaces all interger occurrences in list of tokenized words with textual representation.
+```remove_non_ascii(words)``` removes non-ASCII characters from list of tokenized words
 
-```remove_non_ascii(words)```
-Removes non-ASCII characters from list of tokenized words
 
-```remove_stopwords(tokens)```  
-Removes stop words from a list of tokenized words.
+### Dealing with numbers
+
+Remove numbers if they are not relevant to your analyses.
+
+```remove_numbers()``` strips digits from a list of tokenized words
+
+```replace_numbers(tokens)``` replaces all interger occurrences in list of tokenized words with textual representation.
+
+
+### Dealing with stopwords
+
+```remove_stopwords(tokens)``` removes stop words from a list of tokenized words.
 
 
 ### Stemming and lemmatization
@@ -102,7 +123,7 @@ The goal of both stemming and lemmatization is to reduce inflectional forms and 
 
 Some applications, like document classification, may benefit from stemming in order to both reduce the vocabulary and to focus on the sense or sentiment of a document rather than deeper meaning.
 
-```stem_words()```  stems words in list of tokenized words.
+```stem_words()``` stems words in list of tokenized words.
 
 **Lemmatization** usually refers to doing things properly with the use of a vocabulary and morphological analysis of words, normally aiming to remove inflectional endings only and to return the base or dictionary form of a word, which is known as the lemma. In other words lemmatization converts the word into its root word, rather than just stripping the suffices. 
 
@@ -110,5 +131,11 @@ If confronted with the token saw, stemming might return just s, whereas lemmatiz
 
 ```lemmatize_words()``` lemmatizes verbs in list of tokenized words.
 
-```stem_and_lemmatize()``` creates and prints a list of stemmed and lemmatized verbs.
+```stem_and_lemmatize()``` creates and prints a list of stemmed and lemmatized 
+verbs.
+
+
+References:
+[Matthew Mayo](https://www.kdnuggets.com/2017/12/general-approach-preprocessing-text-data.html)
+
 
