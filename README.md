@@ -1,4 +1,5 @@
-#### What is text preprocessing?
+#### Text preprocessing
+
 To preprocess your text simply means to bring your text into a form that is predictable and analyzable for your task. A task here is a combination of approach and domain. For example, extracting top keywords with tfidf (approach) from Tweets (domain) is an example of a Task.
 One task’s ideal preprocessing, can become another task’s worst nightmare. So take note, text preprocessing is not directly transferable from task to task. Let’s take a very simple example, let’s say you are trying to discover commonly used words in a news dataset. If your pre-processing step involves removing stop words because some other task used it, then you are probably going to miss out on some of the common words as you have ALREADY eliminated it. So really, it’s not a one-size-fits-all approach.
 
@@ -44,20 +45,33 @@ Removes stop words from list of tokenized words.
 ```stem_words()```  
 Stems words in list of tokenized words.
 
+```lemmatize_words()```  
+Lemmatizes verbs in list of tokenized words.
+
+```stem_and_lemmatize()```  
+Creates and prints a list of stemmed and lemmatized verbs.
+
 
 * Contraction replacement:  
 
+```count_contractions()```  
+Counts how many contractions are there and displays a list of them.
+
 ```expand_contracions()```  
-Replaces contractions to their equivalents
+Replaces contractions to their equivalents.
 
 * Slang replacement:  
+
 ```count_slang()```  
 Looks for any slang, if found displays a list of found slangs and total number of slangs in the text. 
 
 ```replace_slang()```  
-Replaces slang words and abbreviations with their equivalents
+Replaces slang words and abbreviations with their equivalents.
 
 * Negation replacement:  
+
+```count_negations()```  
+Counts how many negations are found and displays a list of them. 
 
 ```replace_negations()```  
 Replaces not and the following word with the antonym.
