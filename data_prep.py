@@ -2,6 +2,9 @@ from prep_techniques import *
 import numpy as np
 
 
+'''Load data'''
+neg_reviews = [line.rstrip('\n') for line in open('rt-polarity.neg')]
+
 '''Preprocess data'''
 prepped_data = []
 def data_prep(data):
@@ -29,3 +32,11 @@ def data_prep(data):
         review = ' '.join(tokens)
         prepped_data.append(review + "\n")
     return prepped_data
+
+neg_reviews = data_prep(neg_reviews)
+
+
+# See the results of prepped data in a txt file
+with open ("test", "w") as file:
+    for line in neg_reviews:
+        file.write(line)
