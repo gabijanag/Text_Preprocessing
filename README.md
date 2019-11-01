@@ -4,7 +4,8 @@ There is a whole suite of text preparation methods that you may need to use, and
 
 Let’s take a very simple example, let’s say you are trying to discover commonly used words in a dataset. If your pre-processing step involves removing stop words because some other task used it, then you are probably going to miss out on some of the common words as you have already eliminated it. So really, it’s not a one-size-fits-all approach. 
 
-All the code to the methods further discussed can be found *prep_techniques.py* file. An example of text preprocessing can be seen in the *data_prep.py* file.
+All the code to the methods further discussed can be found __*prep_techniques.py*__ file. 
+An example of text preprocessing can be seen in the __*data_prep.py*__ file.
 
 # Data processing techniques
 
